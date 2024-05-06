@@ -6,23 +6,17 @@ using static EksamenProjekt.Toolbox;
 
 namespace EksamenProjekt.Content.Items
 { 
-	// This is a basic item template.
-	// Please see tModLoader's ExampleMod for every other example:
-	// https://github.com/tModLoader/tModLoader/tree/stable/ExampleMod
-	public class AmatorySword : ModItem
-	{
-        readonly Sword sword = new(600, 40, 40, 50, Item.buyPrice(silver: 1),ItemRarityID.Blue, SoundID.Item1, 6, false);
-        // The Display Name and Tooltip of this item can be edited in the 'Localization/en-US_Mods.EksamenProjekt.hjson' file.
-        public override void SetDefaults()
+	internal class AmatorySword : Sword
+    {
+		internal AmatorySword() : base(999, 5, 40, 40, 20, Item.buyPrice(silver: 1), ItemRarityID.Yellow, SoundID.Item1, true)
 		{
-			sword.AddProjectile(ProjectileID.CrystalShard, 20);
-			sword.InitiateDefaults(this);
+			AddProjectile(ProjectileID.PinkLaser, 20);
 		}
 
-		public override void AddRecipes()
+        public override void AddRecipes()
 		{
 			Recipe recipe = CreateRecipe();
-			sword.AddIngredients(recipe, (ItemID.Wood, 1));
+			AddIngredients(recipe, (ItemID.Wood, 10), (ItemID.CopperShortsword, 1));
 			recipe.AddTile(TileID.WorkBenches);
 			recipe.Register();
 		}
