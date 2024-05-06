@@ -1,0 +1,3 @@
+displayName = Eksamen Projekt
+author = Gruppe 4
+version = 0.1

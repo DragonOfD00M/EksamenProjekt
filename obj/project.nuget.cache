@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "l6t/oh4kv6ha2wf7CVICDNhAjuB55wIj0mp2c94P/Y2vzXVA4lX0nK1bCIAZBjJBiDt8OJO29HSrBOoRtlge/A==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\mart3\\Documents\\My Games\\Terraria\\tModLoader\\ModSources\\EksamenProjekt\\EksamenProjekt.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\mart3\\.nuget\\packages\\tmodloader.codeassist\\0.1.5\\tmodloader.codeassist.0.1.5.nupkg.sha512"
+  ],
+  "logs": []
+}

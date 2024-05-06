@@ -1,0 +1,5 @@
+C:\Users\mart3\Documents\My Games\Terraria\tModLoader\ModSources\EksamenProjekt\obj\Debug\net8.0\EksamenProjekt.csproj.AssemblyReference.cache
+C:\Users\mart3\Documents\My Games\Terraria\tModLoader\ModSources\EksamenProjekt\obj\Debug\net8.0\EksamenProjekt.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\mart3\Documents\My Games\Terraria\tModLoader\ModSources\EksamenProjekt\obj\Debug\net8.0\EksamenProjekt.AssemblyInfoInputs.cache
+C:\Users\mart3\Documents\My Games\Terraria\tModLoader\ModSources\EksamenProjekt\obj\Debug\net8.0\EksamenProjekt.AssemblyInfo.cs
+C:\Users\mart3\Documents\My Games\Terraria\tModLoader\ModSources\EksamenProjekt\obj\Debug\net8.0\EksamenProjekt.csproj.CoreCompileInputs.cache
