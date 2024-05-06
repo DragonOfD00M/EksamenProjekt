@@ -32,6 +32,11 @@ namespace EksamenProjekt
                 }
             }
         }
+        public class Armor()
+        {
+
+        }
+        
         public class Sword(int damage, int width, int height, int useTime, int value, int rare, SoundStyle useSound, int knockback, bool Reuse) : Weapon(damage, width, height, useTime, value, rare, useSound)
         {
             public bool HasProjectile = false;
