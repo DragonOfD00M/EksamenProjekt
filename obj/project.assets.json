@@ -37,11 +37,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\mart3\\Documents\\My Games\\Terraria\\tModLoader\\ModSources\\EksamenProjekt\\EksamenProjekt.csproj",
+      "projectUniqueName": "C:\\Users\\mart3\\OneDrive\\Documents\\my games\\Terraria\\tModLoader\\ModSources\\EksamenProjekt\\EksamenProjekt.csproj",
       "projectName": "EksamenProjekt",
-      "projectPath": "C:\\Users\\mart3\\Documents\\My Games\\Terraria\\tModLoader\\ModSources\\EksamenProjekt\\EksamenProjekt.csproj",
+      "projectPath": "C:\\Users\\mart3\\OneDrive\\Documents\\my games\\Terraria\\tModLoader\\ModSources\\EksamenProjekt\\EksamenProjekt.csproj",
       "packagesPath": "C:\\Users\\mart3\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\mart3\\Documents\\My Games\\Terraria\\tModLoader\\ModSources\\EksamenProjekt\\obj\\",
+      "outputPath": "C:\\Users\\mart3\\OneDrive\\Documents\\my games\\Terraria\\tModLoader\\ModSources\\EksamenProjekt\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

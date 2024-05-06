@@ -6,21 +6,19 @@ using static EksamenProjekt.Toolbox;
 
 namespace EksamenProjekt.Content.Items
 {
-    internal class AmatoryBow : ModItem
+    internal class AmatoryBow : Bow
     {
-        readonly Bow bow = new(20000, 40, 40, 50, Item.buyPrice(silver: 1), ItemRarityID.Green, SoundID.Item2, ProjectileID.WoodenArrowFriendly, 10);
-        public override void SetDefaults()
+        internal AmatoryBow() : base(999,5,40,40,20,Item.buyPrice(silver: 2),ItemRarityID.Yellow, SoundID.Item2, ProjectileID.WoodenArrowFriendly, 20)
         {
-            bow.AddAmmo(AmmoID.Arrow);
-            bow.InitiateDefaults(this);
+            AddAmmo(AmmoID.Arrow);
         }
         public override void AddRecipes()
         {
             Recipe recipe = CreateRecipe();
-            bow.AddIngredients(recipe, (ItemID.Wood, 2));
+            AddIngredients(recipe, (ItemID.Wood, 20), (ItemID.WoodenBow, 1));
             recipe.AddTile(TileID.WorkBenches);
             recipe.Register();
         }
-        public override Vector2? HoldoutOffset() => new Vector2(-8f, 0f);
+        public override Vector2? HoldoutOffset() => new Vector2(-8f, 0f); // Placere buen så man faktisk holder den.
     }
 }
