@@ -37,35 +37,6 @@ namespace EksamenProjekt
                 Item.value = Value;
                 Item.rare = Rarity;
             }
-        }
-
-        public class Weapon : CustomItem
-        {
-            // Weapon er et item, så den er nedarvet Custom Item
-            public Weapon(int damage, int knockback, int width, int height, int useTime, int value, int rarity, SoundStyle useSound) : base(width, height, value, rarity)
-            {
-                // Vi tilføjer Damage, Knockback, UseSpeed og UseSound til Weapon
-                // Laver måske en ældre klasse der hedder tool der skal have useTime og useSound.
-                Damage = damage;
-                Knockback = knockback;
-                UseSpeed = useTime;
-                Sound = useSound;
-            }
-            public int Damage { get; }
-            public int Knockback { get; }
-            public int UseSpeed { get; }
-            public SoundStyle Sound { get; }
-            // I SetDefaults kan man bruge base.SetDefaults for at inkludere fra en ældre klasse
-            public override void SetDefaults()
-            {
-                base.SetDefaults();
-                Item.damage = Damage;
-                Item.knockBack = Knockback;
-                Item.useTime = UseSpeed;
-                Item.useAnimation = UseSpeed;
-                Item.UseSound = Sound;
-            }
-
             // Custom funktion der bruger params til at kunne tage en uendelig mængde af ingredienser
             // Minder om *args i python
             public static void AddIngredients(Recipe recipe, params (short, int)[] ingredients)
@@ -76,6 +47,46 @@ namespace EksamenProjekt
                 {
                     recipe.AddIngredient(ingredient.Item1, ingredient.Item2);
                 }
+            }
+        }
+        public class Tool : CustomItem
+        {
+            // Tool er nedarvet CustomItem
+            public Tool(int useTime, SoundStyle useSound, int width, int height, int value, int rarity) : base(width, height, value, rarity)
+            {
+                UseSpeed = useTime;
+                Sound = useSound;
+            }
+            public int UseSpeed { get; }
+            public SoundStyle Sound { get; }
+            public override void SetDefaults()
+            {
+                base.SetDefaults();
+                Item.useTime = UseSpeed;
+                Item.useAnimation = UseSpeed;
+                Item.UseSound = Sound;
+            }
+        }
+
+        public class Weapon : CustomItem
+        {
+            // Weapon er et item, så den er nedarvet Tool
+            public Weapon(int damage, int knockback, int width, int height, int useTime, int value, int rarity, SoundStyle useSound) : base(width, height, value, rarity)
+            {
+                // Vi tilføjer Damage, Knockback,til Weapon
+                Damage = damage;
+                Knockback = knockback;
+                
+            }
+            public int Damage { get; }
+            public int Knockback { get; }
+
+            // I SetDefaults kan man bruge base.SetDefaults for at inkludere fra en ældre klasse
+            public override void SetDefaults()
+            {
+                base.SetDefaults();
+                Item.damage = Damage;
+                Item.knockBack = Knockback;
             }
         }
         
