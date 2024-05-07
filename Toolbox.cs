@@ -68,10 +68,10 @@ namespace EksamenProjekt
             }
         }
 
-        public class Weapon : CustomItem
+        public class Weapon : Tool
         {
             // Weapon er et item, så den er nedarvet Tool
-            public Weapon(int damage, int knockback, int width, int height, int useTime, int value, int rarity, SoundStyle useSound) : base(width, height, value, rarity)
+            public Weapon(int damage, int knockback, int width, int height, int useTime, int value, int rarity, SoundStyle useSound) : base(useTime, useSound, width, height, value, rarity)
             {
                 // Vi tilføjer Damage, Knockback,til Weapon
                 Damage = damage;
