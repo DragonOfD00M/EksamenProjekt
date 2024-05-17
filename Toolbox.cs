@@ -90,6 +90,33 @@ namespace EksamenProjekt
                 Item.attackSpeedOnlyAffectsWeaponAnimation = true;
             }
         }
+        public class Axe : Tool
+        {
+            public Axe(int axeStrength, int hammerStrength, int damage, int knockback, int useTime, SoundStyle useSound, int width, int height, int value, int rarity): base(useTime, useSound, width, height, value, rarity)
+            {
+                AxeStrenght = axeStrength;
+                HammerStrenght = hammerStrength;
+                Damage = damage;
+                Knockback = knockback;
+            }
+            public int AxeStrenght { get; }
+            public int HammerStrenght { get; }
+            public int Damage { get; }
+            public int Knockback { get; }
+            public override void SetDefaults()
+            {
+                base.SetDefaults();
+                Item.axe = AxeStrenght;
+                Item.hammer = HammerStrenght;                
+                Item.damage = Damage;
+                Item.DamageType = DamageClass.Melee;
+                Item.knockBack = Knockback;
+                Item.useStyle = ItemUseStyleID.Swing;
+                Item.autoReuse = true;
+                Item.attackSpeedOnlyAffectsWeaponAnimation = true;
+
+            }
+        }
         public class Weapon : Tool
         {
             // Weapon er et item, så den er nedarvet Tool
