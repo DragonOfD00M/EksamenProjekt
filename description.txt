@@ -1,1 +1,2 @@
-Modify this file with a description of your mod.
+En toolbox der gør det lettere at lave mods til Terraria.
+Med eksempel filer der viser hvordan Toolboxen bruges.

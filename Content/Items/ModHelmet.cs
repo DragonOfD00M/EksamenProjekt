@@ -6,11 +6,12 @@ using System.Threading.Tasks;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
+using static EksamenProjekt.Toolbox;
 
 namespace EksamenProjekt.Content.Items
 {
     [AutoloadEquip(EquipType.Head)]
-    internal class ModHelmet : Toolbox.Helmet
+    internal class ModHelmet : Helmet
     {
         internal ModHelmet() : base(999, 40, 40, Item.buyPrice(silver: 1), ItemRarityID.Yellow) 
         {
