@@ -11,13 +11,7 @@ namespace EksamenProjekt.Content.Items
         internal AmatoryBow() : base(999,5,40,40,20,Item.buyPrice(silver: 2),ItemRarityID.Yellow, SoundID.Item2, ProjectileID.WoodenArrowFriendly, 20)
         {
             AddAmmo(AmmoID.Arrow);
-        }
-        public override void AddRecipes()
-        {
-            Recipe recipe = CreateRecipe();
-            AddIngredients(recipe, (ItemID.Wood, 20), (ItemID.WoodenBow, 1));
-            recipe.AddTile(TileID.WorkBenches);
-            recipe.Register();
+            MakeRecipe(TileID.WorkBenches, (ItemID.Wood, 20), (ItemID.WoodenBow, 1));
         }
         public override Vector2? HoldoutOffset() => new Vector2(-8f, 0f); // Placere buen så man faktisk holder den.
     }

@@ -1,8 +1,10 @@
-﻿using Microsoft.CodeAnalysis;
+﻿using Microsoft.Build.Tasks;
+using Microsoft.CodeAnalysis;
 using System;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 using Terraria;
@@ -29,6 +31,9 @@ namespace EksamenProjekt
             public int Height { get; }
             public int Value { get; }
             public int Rarity { get; }
+            public bool hasRecipe = false;
+            public (short, int)[] Ingredients;
+            public ushort Workbench;
             // Da CusttomItem er nedarvet ModItem kan vi køre SetDefaults herinde,
             public override void SetDefaults()
             {
@@ -39,6 +44,26 @@ namespace EksamenProjekt
             }
             // Custom funktion der bruger params til at kunne tage en uendelig mængde af ingredienser
             // Minder om *args i python
+            
+            public void MakeRecipe(ushort workbench, params (short, int)[] ingredients)
+            {
+                hasRecipe = true;
+                Workbench = workbench;
+                Ingredients = ingredients;
+            }
+
+            public override void AddRecipes()
+            {
+                if (hasRecipe)
+                {
+                    Recipe recipe = CreateRecipe();
+                    AddIngredients(recipe, Ingredients);
+                    recipe.AddTile(Workbench);
+                    recipe.Register();
+                }
+
+            }
+
             public static void AddIngredients(Recipe recipe, params (short, int)[] ingredients)
             {
                 // foreach er ligesom et python for loop
