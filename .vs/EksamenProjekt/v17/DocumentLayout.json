@@ -1,34 +1,38 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\mart3\\Documents\\My Games\\Terraria\\tModLoader\\ModSources\\EksamenProjekt\\",
+  "WorkspaceRootPath": "C:\\Users\\mart3\\OneDrive\\Documents\\my games\\Terraria\\tModLoader\\ModSources\\EksamenProjekt\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{95184BBF-38E7-4BC9-8A60-FD243BD53535}|EksamenProjekt.csproj|c:\\users\\mart3\\documents\\my games\\terraria\\tmodloader\\modsources\\eksamenprojekt\\toolbox.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{95184BBF-38E7-4BC9-8A60-FD243BD53535}|EksamenProjekt.csproj|c:\\users\\mart3\\onedrive\\documents\\my games\\terraria\\tmodloader\\modsources\\eksamenprojekt\\toolbox.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{95184BBF-38E7-4BC9-8A60-FD243BD53535}|EksamenProjekt.csproj|solutionrelative:toolbox.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{95184BBF-38E7-4BC9-8A60-FD243BD53535}|EksamenProjekt.csproj|c:\\users\\mart3\\documents\\my games\\terraria\\tmodloader\\modsources\\eksamenprojekt\\content\\items\\modhelmet.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{95184BBF-38E7-4BC9-8A60-FD243BD53535}|EksamenProjekt.csproj|solutionrelative:content\\items\\modhelmet.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{95184BBF-38E7-4BC9-8A60-FD243BD53535}|EksamenProjekt.csproj|c:\\users\\mart3\\documents\\my games\\terraria\\tmodloader\\modsources\\eksamenprojekt\\content\\items\\modbreastplate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{95184BBF-38E7-4BC9-8A60-FD243BD53535}|EksamenProjekt.csproj|solutionrelative:content\\items\\modbreastplate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{95184BBF-38E7-4BC9-8A60-FD243BD53535}|EksamenProjekt.csproj|c:\\users\\mart3\\documents\\my games\\terraria\\tmodloader\\modsources\\eksamenprojekt\\content\\items\\modleggings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{95184BBF-38E7-4BC9-8A60-FD243BD53535}|EksamenProjekt.csproj|c:\\users\\mart3\\onedrive\\documents\\my games\\terraria\\tmodloader\\modsources\\eksamenprojekt\\content\\items\\modleggings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{95184BBF-38E7-4BC9-8A60-FD243BD53535}|EksamenProjekt.csproj|solutionrelative:content\\items\\modleggings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{95184BBF-38E7-4BC9-8A60-FD243BD53535}|EksamenProjekt.csproj|c:\\users\\mart3\\documents\\my games\\terraria\\tmodloader\\modsources\\eksamenprojekt\\content\\items\\amatorypickaxe.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{95184BBF-38E7-4BC9-8A60-FD243BD53535}|EksamenProjekt.csproj|solutionrelative:content\\items\\amatorypickaxe.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{95184BBF-38E7-4BC9-8A60-FD243BD53535}|EksamenProjekt.csproj|c:\\users\\mart3\\onedrive\\documents\\my games\\terraria\\tmodloader\\modsources\\eksamenprojekt\\content\\items\\modbreastplate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{95184BBF-38E7-4BC9-8A60-FD243BD53535}|EksamenProjekt.csproj|solutionrelative:content\\items\\modbreastplate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{95184BBF-38E7-4BC9-8A60-FD243BD53535}|EksamenProjekt.csproj|c:\\users\\mart3\\documents\\my games\\terraria\\tmodloader\\modsources\\eksamenprojekt\\content\\items\\amatorybow.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{95184BBF-38E7-4BC9-8A60-FD243BD53535}|EksamenProjekt.csproj|solutionrelative:content\\items\\amatorybow.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{95184BBF-38E7-4BC9-8A60-FD243BD53535}|EksamenProjekt.csproj|c:\\users\\mart3\\onedrive\\documents\\my games\\terraria\\tmodloader\\modsources\\eksamenprojekt\\content\\items\\modaxe.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{95184BBF-38E7-4BC9-8A60-FD243BD53535}|EksamenProjekt.csproj|solutionrelative:content\\items\\modaxe.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{95184BBF-38E7-4BC9-8A60-FD243BD53535}|EksamenProjekt.csproj|c:\\users\\mart3\\documents\\my games\\terraria\\tmodloader\\modsources\\eksamenprojekt\\content\\items\\amatorysword.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{95184BBF-38E7-4BC9-8A60-FD243BD53535}|EksamenProjekt.csproj|solutionrelative:content\\items\\amatorysword.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{95184BBF-38E7-4BC9-8A60-FD243BD53535}|EksamenProjekt.csproj|c:\\users\\mart3\\onedrive\\documents\\my games\\terraria\\tmodloader\\modsources\\eksamenprojekt\\content\\items\\modpickaxe.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{95184BBF-38E7-4BC9-8A60-FD243BD53535}|EksamenProjekt.csproj|solutionrelative:content\\items\\modpickaxe.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{95184BBF-38E7-4BC9-8A60-FD243BD53535}|EksamenProjekt.csproj|c:\\users\\mart3\\onedrive\\documents\\my games\\terraria\\tmodloader\\modsources\\eksamenprojekt\\content\\items\\modsword.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{95184BBF-38E7-4BC9-8A60-FD243BD53535}|EksamenProjekt.csproj|solutionrelative:content\\items\\modsword.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{95184BBF-38E7-4BC9-8A60-FD243BD53535}|EksamenProjekt.csproj|c:\\users\\mart3\\onedrive\\documents\\my games\\terraria\\tmodloader\\modsources\\eksamenprojekt\\content\\items\\modhelmet.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{95184BBF-38E7-4BC9-8A60-FD243BD53535}|EksamenProjekt.csproj|solutionrelative:content\\items\\modhelmet.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{95184BBF-38E7-4BC9-8A60-FD243BD53535}|EksamenProjekt.csproj|c:\\users\\mart3\\onedrive\\documents\\my games\\terraria\\tmodloader\\modsources\\eksamenprojekt\\content\\items\\modbow.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{95184BBF-38E7-4BC9-8A60-FD243BD53535}|EksamenProjekt.csproj|solutionrelative:content\\items\\modbow.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -44,11 +48,11 @@
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "Toolbox.cs",
-              "DocumentMoniker": "C:\\Users\\mart3\\Documents\\My Games\\Terraria\\tModLoader\\ModSources\\EksamenProjekt\\Toolbox.cs",
+              "DocumentMoniker": "C:\\Users\\mart3\\OneDrive\\Documents\\my games\\Terraria\\tModLoader\\ModSources\\EksamenProjekt\\Toolbox.cs",
               "RelativeDocumentMoniker": "Toolbox.cs",
-              "ToolTip": "C:\\Users\\mart3\\Documents\\My Games\\Terraria\\tModLoader\\ModSources\\EksamenProjekt\\Toolbox.cs",
+              "ToolTip": "C:\\Users\\mart3\\OneDrive\\Documents\\my games\\Terraria\\tModLoader\\ModSources\\EksamenProjekt\\Toolbox.cs",
               "RelativeToolTip": "Toolbox.cs",
-              "ViewState": "AQIAAOMAAAAAAAAAAAAcwPYAAAAuAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-05-06T19:00:41.53Z",
               "IsPinned": true,
@@ -56,87 +60,94 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "ModBreastPlate.cs",
-              "DocumentMoniker": "C:\\Users\\mart3\\Documents\\My Games\\Terraria\\tModLoader\\ModSources\\EksamenProjekt\\Content\\Items\\ModBreastPlate.cs",
-              "RelativeDocumentMoniker": "Content\\Items\\ModBreastPlate.cs",
-              "ToolTip": "C:\\Users\\mart3\\Documents\\My Games\\Terraria\\tModLoader\\ModSources\\EksamenProjekt\\Content\\Items\\ModBreastPlate.cs",
-              "RelativeToolTip": "Content\\Items\\ModBreastPlate.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAAfAAAA",
+              "DocumentIndex": 3,
+              "Title": "ModAxe.cs",
+              "DocumentMoniker": "C:\\Users\\mart3\\OneDrive\\Documents\\my games\\Terraria\\tModLoader\\ModSources\\EksamenProjekt\\Content\\Items\\ModAxe.cs",
+              "RelativeDocumentMoniker": "Content\\Items\\ModAxe.cs",
+              "ToolTip": "C:\\Users\\mart3\\OneDrive\\Documents\\my games\\Terraria\\tModLoader\\ModSources\\EksamenProjekt\\Content\\Items\\ModAxe.cs",
+              "RelativeToolTip": "Content\\Items\\ModAxe.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAABVAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-17T10:50:09.582Z",
+              "WhenOpened": "2024-05-17T18:30:52.701Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 2,
+              "Title": "ModBreastplate.cs",
+              "DocumentMoniker": "C:\\Users\\mart3\\OneDrive\\Documents\\my games\\Terraria\\tModLoader\\ModSources\\EksamenProjekt\\Content\\Items\\ModBreastplate.cs",
+              "RelativeDocumentMoniker": "Content\\Items\\ModBreastplate.cs",
+              "ToolTip": "C:\\Users\\mart3\\OneDrive\\Documents\\my games\\Terraria\\tModLoader\\ModSources\\EksamenProjekt\\Content\\Items\\ModBreastplate.cs",
+              "RelativeToolTip": "Content\\Items\\ModBreastplate.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABEAAAAJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-17T18:02:03.419Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
               "Title": "ModLeggings.cs",
-              "DocumentMoniker": "C:\\Users\\mart3\\Documents\\My Games\\Terraria\\tModLoader\\ModSources\\EksamenProjekt\\Content\\Items\\ModLeggings.cs",
+              "DocumentMoniker": "C:\\Users\\mart3\\OneDrive\\Documents\\my games\\Terraria\\tModLoader\\ModSources\\EksamenProjekt\\Content\\Items\\ModLeggings.cs",
               "RelativeDocumentMoniker": "Content\\Items\\ModLeggings.cs",
-              "ToolTip": "C:\\Users\\mart3\\Documents\\My Games\\Terraria\\tModLoader\\ModSources\\EksamenProjekt\\Content\\Items\\ModLeggings.cs",
+              "ToolTip": "C:\\Users\\mart3\\OneDrive\\Documents\\my games\\Terraria\\tModLoader\\ModSources\\EksamenProjekt\\Content\\Items\\ModLeggings.cs",
               "RelativeToolTip": "Content\\Items\\ModLeggings.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAAcAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAASAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-05-17T10:49:47.672Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 6,
               "Title": "ModHelmet.cs",
-              "DocumentMoniker": "C:\\Users\\mart3\\Documents\\My Games\\Terraria\\tModLoader\\ModSources\\EksamenProjekt\\Content\\Items\\ModHelmet.cs",
+              "DocumentMoniker": "C:\\Users\\mart3\\OneDrive\\Documents\\my games\\Terraria\\tModLoader\\ModSources\\EksamenProjekt\\Content\\Items\\ModHelmet.cs",
               "RelativeDocumentMoniker": "Content\\Items\\ModHelmet.cs",
-              "ToolTip": "C:\\Users\\mart3\\Documents\\My Games\\Terraria\\tModLoader\\ModSources\\EksamenProjekt\\Content\\Items\\ModHelmet.cs",
+              "ToolTip": "C:\\Users\\mart3\\OneDrive\\Documents\\my games\\Terraria\\tModLoader\\ModSources\\EksamenProjekt\\Content\\Items\\ModHelmet.cs",
               "RelativeToolTip": "Content\\Items\\ModHelmet.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAAAAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAAjAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-05-17T10:47:55.193Z",
               "EditorCaption": ""
             },
             {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{eefa5220-e298-11d0-8f78-00a0c9110057}"
-            },
-            {
               "$type": "Document",
               "DocumentIndex": 4,
-              "Title": "AmatoryPickaxe.cs",
-              "DocumentMoniker": "C:\\Users\\mart3\\Documents\\My Games\\Terraria\\tModLoader\\ModSources\\EksamenProjekt\\Content\\Items\\AmatoryPickaxe.cs",
-              "RelativeDocumentMoniker": "Content\\Items\\AmatoryPickaxe.cs",
-              "ToolTip": "C:\\Users\\mart3\\Documents\\My Games\\Terraria\\tModLoader\\ModSources\\EksamenProjekt\\Content\\Items\\AmatoryPickaxe.cs",
-              "RelativeToolTip": "Content\\Items\\AmatoryPickaxe.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABAAAAAFAAAA",
+              "Title": "ModPickaxe.cs",
+              "DocumentMoniker": "C:\\Users\\mart3\\OneDrive\\Documents\\my games\\Terraria\\tModLoader\\ModSources\\EksamenProjekt\\Content\\Items\\ModPickaxe.cs",
+              "RelativeDocumentMoniker": "Content\\Items\\ModPickaxe.cs",
+              "ToolTip": "C:\\Users\\mart3\\OneDrive\\Documents\\my games\\Terraria\\tModLoader\\ModSources\\EksamenProjekt\\Content\\Items\\ModPickaxe.cs",
+              "RelativeToolTip": "Content\\Items\\ModPickaxe.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAUAAAAPAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-05-17T06:56:56.01Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "AmatoryBow.cs",
-              "DocumentMoniker": "C:\\Users\\mart3\\Documents\\My Games\\Terraria\\tModLoader\\ModSources\\EksamenProjekt\\Content\\Items\\AmatoryBow.cs",
-              "RelativeDocumentMoniker": "Content\\Items\\AmatoryBow.cs",
-              "ToolTip": "C:\\Users\\mart3\\Documents\\My Games\\Terraria\\tModLoader\\ModSources\\EksamenProjekt\\Content\\Items\\AmatoryBow.cs",
-              "RelativeToolTip": "Content\\Items\\AmatoryBow.cs",
-              "ViewState": "AQIAAAMAAAAAAAAAAAAAAA4AAAAJAAAA",
+              "DocumentIndex": 7,
+              "Title": "ModBow.cs",
+              "DocumentMoniker": "C:\\Users\\mart3\\OneDrive\\Documents\\my games\\Terraria\\tModLoader\\ModSources\\EksamenProjekt\\Content\\Items\\ModBow.cs",
+              "RelativeDocumentMoniker": "Content\\Items\\ModBow.cs",
+              "ToolTip": "C:\\Users\\mart3\\OneDrive\\Documents\\my games\\Terraria\\tModLoader\\ModSources\\EksamenProjekt\\Content\\Items\\ModBow.cs",
+              "RelativeToolTip": "Content\\Items\\ModBow.cs",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAAAAgAAAAfAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-06T11:22:40.075Z"
+              "WhenOpened": "2024-05-06T11:22:40.075Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "AmatorySword.cs",
-              "DocumentMoniker": "C:\\Users\\mart3\\Documents\\My Games\\Terraria\\tModLoader\\ModSources\\EksamenProjekt\\Content\\Items\\AmatorySword.cs",
-              "RelativeDocumentMoniker": "Content\\Items\\AmatorySword.cs",
-              "ToolTip": "C:\\Users\\mart3\\Documents\\My Games\\Terraria\\tModLoader\\ModSources\\EksamenProjekt\\Content\\Items\\AmatorySword.cs",
-              "RelativeToolTip": "Content\\Items\\AmatorySword.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAsAAAA",
+              "DocumentIndex": 5,
+              "Title": "ModSword.cs",
+              "DocumentMoniker": "C:\\Users\\mart3\\OneDrive\\Documents\\my games\\Terraria\\tModLoader\\ModSources\\EksamenProjekt\\Content\\Items\\ModSword.cs",
+              "RelativeDocumentMoniker": "Content\\Items\\ModSword.cs",
+              "ToolTip": "C:\\Users\\mart3\\OneDrive\\Documents\\my games\\Terraria\\tModLoader\\ModSources\\EksamenProjekt\\Content\\Items\\ModSword.cs",
+              "RelativeToolTip": "Content\\Items\\ModSword.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAAACAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-06T06:12:26.157Z"
+              "WhenOpened": "2024-05-06T06:12:26.157Z",
+              "EditorCaption": ""
             }
           ]
         }

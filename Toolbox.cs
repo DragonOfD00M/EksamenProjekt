@@ -4,24 +4,38 @@ using Microsoft.CodeAnalysis;
 using System;
 using System.Collections.Generic;
 using System.Configuration;
+using System.IO;
 using System.Linq;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 using Terraria;
 using Terraria.Audio;
-using Terraria.Graphics.Shaders;
 using Terraria.ID;
 using Terraria.ModLoader;
 
 namespace EksamenProjekt
 {
+    /// <summary>
+    /// Toolbox er vores produkt som indeholder en masse redkaber (klasser) som skal gøre det nemmere at kode mods til Terraria
+    /// Vi har brugt tmodloaders oficielle GitHub og mod eksempler til at finde syntaxen, og så har vi selv valgt hvilke redskaber der skal bruges.
+    /// Vi har valgt kun at sætte os ind i hvordan man laver items, og ikke blocks og ling. da de kræver et helt andet, mere kompliceret system.
+    /// </summary>
     public class Toolbox
     {
-        // Jeg tror toolbox skal være der, men det er ihvertfald den der indeholder alle andre klasser.
+        /// <summary>
+        /// CustomItem er den første klasse i vores nedarvingshieraki. Den er selv nedarvet Terraria.ModLoader.ModItem, så derfor kan man lave overrides allerede herinde.
+        /// </summary>
         public class CustomItem : ModItem
         {
-            // CustomItem er nedarvet af Tmodloaders ModItem, det er også den 'ældste' af vores klasser.
+            // Der bruges en indre constructor frem for 'primary constructor' for at gøre koden mere overskuelig.
+            /// <summary>
+            /// Constructoren tager argumenterne width, height, value og rarity
+            /// </summary>
+            /// <param name="width">Hitboxens Bredde</param>
+            /// <param name="height">Hitboxens Højde</param>
+            /// <param name="value">Itemens værdi, altså hvor dyr den er at købe.</param>
+            /// <param name="rarity">Itemens rarity, altså hvor shælden den er.</param>
             public CustomItem(int width, int height, int value, int rarity)
             {
                 Width = width;
@@ -29,52 +43,78 @@ namespace EksamenProjekt
                 Value = value; 
                 Rarity = rarity;
             }
+            // De følgende linjer gør at man kan gemme argumenterne som variabler til senere brug.
+            // De skal defineres uden for constructoren med { get; } da værdien skal sættes en gang og ikke ændres igen senere.
+            // Det er simplere end at skrive public readonly int Width; Har også noget med indkapsling at gøre ifølge Hr. GPT.
             public int Width { get; }
             public int Height { get; }
             public int Value { get; }
             public int Rarity { get; }
+            // Her klargøres andre variabler der skal sættes uden for constructoren.
             public bool hasRecipe = false;
             public (short, int)[] Ingredients;
             public ushort Workbench;
-            // Da CusttomItem er nedarvet ModItem kan vi køre SetDefaults herinde,
+            
+            /*En stor del af Terraria modding er at bruge metode underkendelse (Method Overiding).
+            Det er fordi, ModItem har en masse prædefinerede funktioner og fordi vi netop nedarver ModItem til resten af vores Items.
+            SetDefaults() er en meget vigtig funktion som bruges til at give vores items værdier.
+            Her i CustomItem gives de kun 4 værdier, men som itemsne bliver mere og mere specifikke inkluderes flere og flere elementer.
+            Det smarte er at man kan underkende denne funktion i nedarvede funktioner for at gøre den mere specifik.*/
             public override void SetDefaults()
             {
+                // Item er en specifik værdi fra ModItem som tog lidt tid at forstå præcis hvordan skulle implementeres.
                 Item.width = Width;
                 Item.height = Height;
                 Item.value = Value;
                 Item.rare = Rarity;
             }
-            // Custom funktion der bruger params til at kunne tage en uendelig mængde af ingredienser
-            // Minder om *args i python
-            
-            public void MakeRecipe(ushort workbench, params (short, int)[] ingredients)
+            // Hvis man vil have en item, så skal man kunne lave den på en eller anden måde og det sørger vi for med de 2 næste funktioner.
+            /// <summary>
+            /// MakeRecipe er en brugerdefineret funktion som giver værdier til variabler som skal bruges til at lave et item.
+            /// </summary>
+            /// <param name="workbench">En ushort (TileIDs type) som bestemmer hvorhenne man laver itemmen</param>
+            /// <param name="ingredients">
+            /// En et værdipar af en short (ItemIDs type) som ræpresenterer indgrædiensen. 
+            /// Den anden er en int som ræpresenterer mængden.
+            /// </param>
+            public void InitRecipe(ushort workbench, params (short, int)[] ingredients)
             {
-                hasRecipe = true;
-                Workbench = workbench;
+                hasRecipe = true; // hasRecipe 
+                Workbench = workbench; 
+                // Ingredients er lidt speciel. Det er et params argument.
+                // Det specielle ved params er at det gør ingredients til en liste med mulighed for en uendelig mængde (short, int) værdipar.
+                // Man kan derfor skrive så mange ingredienser man har lyst til.
+                // Hvis det hjælper så svare det til *args i python.
                 Ingredients = ingredients;
             }
-
+            /// <summary>
+            /// AddIngredients er en funktion som bruger en speciel løkke til at tilføje alle elementer i ingredients til opskriften.
+            /// </summary
+            public static void AddIngredients(Recipe recipe, params (short, int)[] ingredients)
+            {
+                // Et foreach løkke går igennem alle elementer i en liste og giver dem et specifikt navn.
+                // I dette tilfælde er navnet ingredient i listen ingredients.
+                // Det er standard navngivning at have listen i flertal og navnet i ental.
+                // foreach løkken svare til for løkken i python men vær opmærksom på at en for løkke i c# fungere på en anden måde.
+                foreach ((short, int) ingredient in ingredients)
+                {
+                    recipe.AddIngredient(ingredient.Item1, ingredient.Item2); // AddIngredient er en metode til Terrarias type Recipe som laves i en underkendelse længere nede.
+                }
+            }
+            // Her bruges endnu en underkendelse. ModItem har nemlig allerede en funktion der laver en opskrift.
+            // Vi vil bare ændre den så det er vores egne værdier der er med.
             public override void AddRecipes()
             {
-                if (hasRecipe)
+                if (hasRecipe) // Først tjekker vi om vi har lavet en opskrift. Husk InitRecipe sætter denne til true, mens den normalt er false.
                 {
-                    Recipe recipe = CreateRecipe();
+                    Recipe recipe = CreateRecipe(); // Vi bruger en ModItem metode til at klargøre 
                     AddIngredients(recipe, Ingredients);
                     recipe.AddTile(Workbench);
                     recipe.Register();
                 }
 
             }
-
-            public static void AddIngredients(Recipe recipe, params (short, int)[] ingredients)
-            {
-                // foreach er ligesom et python for loop
-                // for loops i C# er anderledes
-                foreach ((short, int) ingredient in ingredients)
-                {
-                    recipe.AddIngredient(ingredient.Item1, ingredient.Item2);
-                }
-            }
+            
         }
         public class Tool : CustomItem
         {
@@ -250,30 +290,33 @@ namespace EksamenProjekt
                 Item.defense = Defence;
             }
         }
-        [AutoloadEquip(EquipType.Head)]
+        
         public class Helmet: ArmorPiece
         {
-            public Helmet(int defence, int width, int height, int value, int rarity) : base(defence, width, height, value, rarity)
+            public Helmet(int defence, int width, int height, int value, int rarity) : base(defence, width, height, value, rarity) { }
+            public bool ArmorSetActive = false;
+            public int PairedBreastplate;
+            public int PairedLeggings;
+            public void MakeIntoArmorset(int pairedBreastplate, int pairedLeggings)
             {
-
+                ArmorSetActive = true;
+                PairedBreastplate = pairedBreastplate;
+                PairedLeggings = pairedLeggings;
+                
+            }
+            public override bool IsArmorSet(Item head, Item body, Item legs)
+            {
+                return body.type == PairedBreastplate && legs.type == PairedLeggings;
             }
 
         }
-        [AutoloadEquip(EquipType.Body)]
         public class Breastplate: ArmorPiece
         {
-            public Breastplate(int defence, int width, int height, int value, int rarity) : base(defence, width, height, value, rarity)
-            {
-
-            }
-
+            public Breastplate(int defence, int width, int height, int value, int rarity) : base(defence, width, height, value, rarity) { }
         }
         public class Leggings : ArmorPiece
         {
-            public Leggings(int defence, int width, int height, int value, int rarity) : base(defence, width, height, value, rarity)
-            {
-
-            }
+            public Leggings(int defence, int width, int height, int value, int rarity) : base(defence, width, height, value, rarity) { }
         }
     }
 }

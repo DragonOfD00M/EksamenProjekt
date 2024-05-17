@@ -5,12 +5,17 @@ using System.Text;
 using System.Threading.Tasks;
 using Terraria;
 using Terraria.ID;
+using Terraria.ModLoader;
 
 namespace EksamenProjekt.Content.Items
 {
+    [AutoloadEquip(EquipType.Body)]
     internal class ModBreastplate : Toolbox.Breastplate
     {
-        internal ModBreastplate() : base(999, 40, 40, Item.buyPrice(silver: 1), ItemRarityID.Yellow) { }
+        internal ModBreastplate() : base(999, 40, 40, Item.buyPrice(silver: 1), ItemRarityID.Yellow) 
+        {
+            InitRecipe(TileID.WorkBenches, (ItemID.StoneBlock, 30), (ItemID.WoodBreastplate, 1));
+        }
     }
 
 }

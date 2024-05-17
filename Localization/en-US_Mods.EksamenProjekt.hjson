@@ -20,4 +20,39 @@ Items: {
 		DisplayName: Amatory Pickaxe
 		Tooltip: ""
 	}
+
+	ModBow: {
+		DisplayName: Mod Bow
+		Tooltip: ""
+	}
+
+	ModBreastplate: {
+		DisplayName: Mod Breastplate
+		Tooltip: ""
+	}
+
+	ModHelmet: {
+		DisplayName: Mod Helmet
+		Tooltip: ""
+	}
+
+	ModLeggings: {
+		DisplayName: Mod Leggings
+		Tooltip: ""
+	}
+
+	ModPickaxe: {
+		DisplayName: Mod Pickaxe
+		Tooltip: ""
+	}
+
+	ModSword: {
+		DisplayName: Mod Sword
+		Tooltip: ""
+	}
+
+	ModAxe: {
+		DisplayName: Mod Axe
+		Tooltip: ""
+	}
 }
