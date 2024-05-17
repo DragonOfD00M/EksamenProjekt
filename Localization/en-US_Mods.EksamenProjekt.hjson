@@ -15,4 +15,9 @@ Items: {
 		DisplayName: Amatory Bow
 		Tooltip: ""
 	}
+
+	AmatoryPickaxe: {
+		DisplayName: Amatory Pickaxe
+		Tooltip: ""
+	}
 }

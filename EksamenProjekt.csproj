@@ -11,6 +11,7 @@
 	<!-- References -->
 	<ItemGroup>
 	  <None Remove="Content\Items\AmatoryBow.png" />
+	  <None Remove="Content\Items\AmatoryPickaxe.png" />
 	</ItemGroup>
 
 </Project>
