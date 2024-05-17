@@ -1,4 +1,5 @@
-﻿using Microsoft.Build.Tasks;
+﻿using EksamenProjekt.Content.Items;
+using Microsoft.Build.Tasks;
 using Microsoft.CodeAnalysis;
 using System;
 using System.Collections.Generic;
@@ -9,6 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Terraria;
 using Terraria.Audio;
+using Terraria.Graphics.Shaders;
 using Terraria.ID;
 using Terraria.ModLoader;
 
@@ -235,6 +237,43 @@ namespace EksamenProjekt
                 AmmoType = ammoType;
             }
         }
+        public class ArmorPiece : CustomItem
+        {
+            public ArmorPiece(int defence, int width, int height, int value, int rarity) : base(width, height, value, rarity)
+            {
+                Defence = defence;
+            }
+            public int Defence { get; }
+            public override void SetDefaults()
+            {
+                base.SetDefaults();
+                Item.defense = Defence;
+            }
+        }
+        [AutoloadEquip(EquipType.Head)]
+        public class Helmet: ArmorPiece
+        {
+            public Helmet(int defence, int width, int height, int value, int rarity) : base(defence, width, height, value, rarity)
+            {
 
+            }
+
+        }
+        [AutoloadEquip(EquipType.Body)]
+        public class Breastplate: ArmorPiece
+        {
+            public Breastplate(int defence, int width, int height, int value, int rarity) : base(defence, width, height, value, rarity)
+            {
+
+            }
+
+        }
+        public class Leggings : ArmorPiece
+        {
+            public Leggings(int defence, int width, int height, int value, int rarity) : base(defence, width, height, value, rarity)
+            {
+
+            }
+        }
     }
 }
