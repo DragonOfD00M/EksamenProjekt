@@ -19,6 +19,7 @@
 	  <None Remove="Content\Items\ModLeggings.png" />
 	  <None Remove="Content\Items\ModLeggings_Legs.png" />
 	  <None Remove="Content\Items\ModPickaxe.png" />
+	  <None Remove="Content\Items\ModStaff.png" />
 	</ItemGroup>
 
 </Project>

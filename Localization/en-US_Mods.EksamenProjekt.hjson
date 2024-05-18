@@ -55,4 +55,9 @@ Items: {
 		DisplayName: Mod Axe
 		Tooltip: ""
 	}
+
+	ModStaff: {
+		DisplayName: Mod Staff
+		Tooltip: ""
+	}
 }

@@ -123,8 +123,7 @@ namespace EksamenProjekt
                 Damage = damage;
                 Knockback = knockback;
                 UseTime = useTime;
-                UseSound = useSound;
-                
+                UseSound = useSound;  
             }
             public int Damage { get; }
             public int Knockback { get; }
@@ -143,15 +142,83 @@ namespace EksamenProjekt
                 Item.UseSound = UseSound;
             }
         }
+        // I Terraria kan man vælge at spille som man har lyst til, men det udstyr man får fat i kan hjælpe meget alt efter om du spiller som f.eks. en ridder, en skytte eller en troldmand.
+        /// <summary>
+        /// MeleeWeapon nedarves til våben som skal ramme fjenden.
+        /// Dette er som hovedregels sværd, men kan også være andeet, redskaber inkluderet.
+        /// </summary>
+        public class MeleeWeapon : Weapon
+        {
+            /// <summary>
+            /// Der er ikke nogen specifikke variabler der laves i MeleeWeapon frem for weapon.
+            /// Isteddet bruges det til DRY (don't repeat yourself) konceptet.
+            /// </summary>
+            /// <inheritdoc cref="Weapon(int, int, int, SoundStyle, int, int, int, int)"/>
+            public MeleeWeapon(int damage, int knockback, int useTime, SoundStyle useSound, int width, int height, int value, int rarity) : base(damage, knockback, useTime, useSound, width, height, value, rarity) { }
+            
+            public override void SetDefaults() 
+            { 
+                base.SetDefaults();
+                Item.DamageType = DamageClass.Melee; // DamageType er den skadetype der bruges. Her sættes den til Melee, da det er et MeleeWeapon.
+            }
+        }
+
+        public class RangedWeapon : Weapon
+        {
+            public RangedWeapon(int damage, int knockback, int useTime, SoundStyle useSound, int width, int height, int value, int rarity) : base(damage, knockback, useTime, useSound, width, height, value, rarity) { }
+
+            public override void SetDefaults()
+            {
+                base.SetDefaults();
+                Item.DamageType = DamageClass.Ranged;
+            }
+
+        }
+        public class MagicWeapon : Weapon
+        {
+            public MagicWeapon(int damage, int knockback, int useTime, SoundStyle useSound, int width, int height, int value, int rarity) : base(damage, knockback, useTime, useSound, width, height, value, rarity) { }
+
+            public override void SetDefaults()
+            {
+                base.SetDefaults();
+                Item.DamageType = DamageClass.Magic;
+            }
+        }
+        public class Staff : MagicWeapon
+        {
+            public Staff(short projectile, int manaCost, int damage, int knockback, int projectileVelocity,int useTime, SoundStyle useSound, int width, int height, int value, int rarity) : base(damage, knockback, useTime, useSound, width, height, value, rarity)
+            {
+                Projectile = projectile;
+                ProjectileVel = projectileVelocity;
+                ManaCost = manaCost;
+            }
+            public short Projectile { get; }
+            public int ProjectileVel { get; }
+            public int ManaCost { get; }
+
+            public override void SetStaticDefaults()
+            {
+                Item.staff[Type] = true;
+            }
+            public override void SetDefaults()
+            {
+                base.SetDefaults();
+                Item.useStyle = ItemUseStyleID.Shoot;
+                Item.shoot = Projectile;
+                Item.shootSpeed = ProjectileVel;
+                Item.mana = ManaCost;
+                Item.noMelee = true;
+                Item.autoReuse = true;
+            }
+        }
 
         /// <summary>
-        /// Pickaxe er, godt nok lidt ulogisk, nedarvet Weapon.
+        /// Pickaxe er, godt nok lidt ulogisk, nedarvet MeleeWeapon.
         /// Det er fordi, det ensete der får pickaxe til at skille sig ud fra weapon er dens strength parameter.
         /// Originalt havde vi en Tool klasse på samme niveau som Weapon, men grundet lighederne har vi valgt at skrotte den.
         /// Pickaxe er en den sidste i en gren af nedarvingshierakiet.
         /// </summary>
-
-        public class Pickaxe : Weapon
+        public class Pickaxe : MeleeWeapon
         {
             /// <summary>
             /// Pickaxes sekundære constructor.
@@ -164,16 +231,13 @@ namespace EksamenProjekt
                 Strength = strenght;
             }
             public int Strength { get; }
-            // Fordi pickaxe er det sidste led kan man tilføje ting faste værdier som DamageType og useStyle.
-            // DamageClass og ItemUseStyleID kaldes også magic numbers. Det er fordi, de egentlig bare kigger i en liste og giver et nummer f.eks. er swing 1
+            // Fordi pickaxe er det sidste led kan man tilføje ting faste værdier som useStyle.
+            // ItemUseStyleID kaldes også et magic number. Det er fordi, de egentlig bare kigger i en liste og giver et nummer f.eks. er swing = 1
             // Det gode ved magic numbers er at man ikke behøver at vide hvilket tal swing svare til, man kan bare skrive swing.
             public override void SetDefaults()
             {
                 base.SetDefaults();
                 Item.pick = Strength;
-                // Man kan lave effekter der påvirker specille DamageClasses i spillet.
-                // DamageType og -Class handler om om man vil spille spillet som f.eks. en skytte, en ridder eller en troldmand.                
-                Item.DamageType = DamageClass.Melee;
                 Item.autoReuse = true; // autoReuse er om man skal kunne holde musseknappen inde, hvilken man skal på en hakke.
                 Item.useStyle = ItemUseStyleID.Swing; // Animationen der skal bruges er også fast, nemlig Swing
                 Item.attackSpeedOnlyAffectsWeaponAnimation = true; // Den her gør som navnet antyder.
@@ -181,11 +245,11 @@ namespace EksamenProjekt
         }
 
         /// <summary>
-        /// Axe er ligesom pickaxe nedarvet weapon.
+        /// Axe er ligesom pickaxe nedarvet MeleeWeapon.
         /// Axe er ikke en økse der bruges til kamp, men til at hukke træer ned.
         /// Der inkluderes en hammer funktion i Axe. Denne funktion er til at fjerne baggrundsvægge.
         /// </summary>
-        public class Axe : Weapon
+        public class Axe : MeleeWeapon
         {
             /// <summary>
             /// Den sekundære constructor i Axe.
@@ -207,17 +271,15 @@ namespace EksamenProjekt
                 base.SetDefaults();
                 Item.axe = AxeStrenght;
                 Item.hammer = HammerStrenght;
-                Item.DamageType = DamageClass.Melee;
                 Item.useStyle = ItemUseStyleID.Swing;
                 Item.autoReuse = true;
                 Item.attackSpeedOnlyAffectsWeaponAnimation = true;
             }
         }
-
         /// <summary>
         /// Sword er nedarvet Weapon og er den sidste i sin række.
         /// </summary>
-        public class Sword : Weapon
+        public class Sword : MeleeWeapon
         {
             /// <summary>
             /// Den skundære constructor for Sword.
@@ -239,7 +301,6 @@ namespace EksamenProjekt
             public override void SetDefaults()
             {
                 base.SetDefaults();
-                Item.DamageType = DamageClass.Melee;
                 Item.useStyle = ItemUseStyleID.Swing;
                 Item.autoReuse = AutoReuse;
                 if (HasProjectile) // Denne kode kører kun hvis man har tilføjet et projektil.
@@ -264,50 +325,59 @@ namespace EksamenProjekt
         /// Bow er den sidste af de fire klasser der er nedarvet weapon.
         /// Ligesom de andre er den enden af nedarvingen.
         /// </summary>
-        public class Bow : Weapon
+        public class Bow : RangedWeapon
         {
             /// <summary>
-            /// 
+            /// Den sekundære constructor of Bow
+            /// Heri tilføjes projectile og projectilgeVelocity
             /// </summary>
-            /// <param name="projectile"></param>
-            /// <param name="projectileVelocity"></param>
+            /// <inheritdoc cref="Sword.AddProjectile(short, int)"/>
             /// <inheritdoc cref="Weapon(int, int, int, SoundStyle, int, int, int, int)"/>
             public Bow(short projectile, int damage, int knockback, int projectileVelocity, int useTime, SoundStyle useSound, int width, int height, int value, int rarity) : base(damage, knockback, useTime, useSound, width, height, value, rarity)
             {
-                // Bow har et projectile og en shootspeed som er unikt for den.
-                // Burde måske omnavngives til Gun, da det egentlig er det samme i Terraria
                 Projectile = projectile;
                 ProjectileVel = projectileVelocity;
             }
 
             public short Projectile { get; }
             public int ProjectileVel { get; }
-            public bool usesAmmo = false;
+            // Man kan både have en bue der brugger ammunition, eller en bue der ikke gør
+            // Som standard vælger vi at den ikke skal bruge ammunition.
+            public bool usesAmmo = false; 
             public int AmmoType;
             public override void SetDefaults()
             {
                 base.SetDefaults();
-                // Igen laver man specifikke DamageClass og useStyle
-                Item.DamageType = DamageClass.Ranged;
                 Item.useStyle = ItemUseStyleID.Shoot;
-                Item.noMelee = true; // Jeg ved ik' jeg satte den bare til true. Kan laves som en parameter hvis man har lyst.
+                Item.noMelee = true; // noMe
                 Item.shoot = Projectile;
                 Item.shootSpeed = ProjectileVel;
-                if (usesAmmo == true)
+                if (usesAmmo) // Kun hvis den bruger ammunition.
                 {
                     Item.useAmmo = AmmoType;
                 }
 
             }
-            // Hvis Bow skal bruge ammo så bruges denne funktion
+            /// <summary>
+            /// AddAmmo køres i constructoren af modfilen hvis ens bue skal bruge ammonition
+            /// </summary>
+            /// <param name="ammoType">Brug AmmoID magic number</param>
             public void AddAmmo(int ammoType)
             {
-                usesAmmo = true;
+                usesAmmo = true; // gør at SetDefaults tilføjer ammunition
                 AmmoType = ammoType;
             }
         }
+        /// <summary>
+        /// ArmorPiece er nedarvet CustomItem og derfor på samme niveau i nedarvingshierakiet som Weapon.
+        /// </summary>
         public class ArmorPiece : CustomItem
         {
+            /// <summary>
+            /// 
+            /// </summary>
+            /// <param name="defence"></param>
+            /// <inheritdoc cref="CustomItem(int, int, int, int)"/>
             public ArmorPiece(int defence, int width, int height, int value, int rarity) : base(width, height, value, rarity)
             {
                 Defence = defence;

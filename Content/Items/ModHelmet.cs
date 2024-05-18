@@ -20,7 +20,7 @@ namespace EksamenProjekt.Content.Items
         }
         public override void UpdateArmorSet(Player player)
         {
-            player.GetDamage(DamageClass.Generic) += 10;
+            player.GetDamage(DamageClass.Melee) += 10;
         }
 
     }
