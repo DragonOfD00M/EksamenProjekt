@@ -162,9 +162,16 @@ namespace EksamenProjekt
                 Item.DamageType = DamageClass.Melee; // DamageType er den skadetype der bruges. Her sættes den til Melee, da det er et MeleeWeapon.
             }
         }
-
+        /// <summary>
+        /// RangedWeapon nedarves til våben der skyder noget.
+        /// F.eks. en bue eller et gevær.
+        /// </summary>
         public class RangedWeapon : Weapon
         {
+            /// <summary>
+            /// Sekunder constructor.
+            /// </summary>
+            /// <inheritdoc cref="Weapon(int, int, int, SoundStyle, int, int, int, int)"/>
             public RangedWeapon(int damage, int knockback, int useTime, SoundStyle useSound, int width, int height, int value, int rarity) : base(damage, knockback, useTime, useSound, width, height, value, rarity) { }
 
             public override void SetDefaults()
@@ -174,18 +181,34 @@ namespace EksamenProjekt
             }
 
         }
+        /// <summary>
+        /// MagicWeapon nedarves til våben der bruger magi til at skade.
+        /// Tryllestave og lign.
+        /// </summary>
         public class MagicWeapon : Weapon
         {
+            /// <summary>
+            /// Sekundær constructor for MagicWeapon
+            /// </summary>
+            /// <inheritdoc cref="Weapon(int, int, int, SoundStyle, int, int, int, int)"/>
             public MagicWeapon(int damage, int knockback, int useTime, SoundStyle useSound, int width, int height, int value, int rarity) : base(damage, knockback, useTime, useSound, width, height, value, rarity) { }
-
             public override void SetDefaults()
             {
                 base.SetDefaults();
                 Item.DamageType = DamageClass.Magic;
             }
         }
+        /// <summary>
+        /// Staff er nedarvet MagicWeapon
+        /// </summary>
         public class Staff : MagicWeapon
         {
+            /// <summary>
+            /// 
+            /// </summary>
+            /// <param name="manaCost">Hvor meget mana koster det at bruge våbnet</param>
+            /// <inheritdoc cref="Sword.AddProjectile(short, int)"/>
+            /// <inheritdoc cref="Weapon(int, int, int, SoundStyle, int, int, int, int)"/>
             public Staff(short projectile, int manaCost, int damage, int knockback, int projectileVelocity,int useTime, SoundStyle useSound, int width, int height, int value, int rarity) : base(damage, knockback, useTime, useSound, width, height, value, rarity)
             {
                 Projectile = projectile;
@@ -195,10 +218,10 @@ namespace EksamenProjekt
             public short Projectile { get; }
             public int ProjectileVel { get; }
             public int ManaCost { get; }
-
+            // SetStaticDefaults er lidt anderledes fra SetDefaults.
             public override void SetStaticDefaults()
             {
-                Item.staff[Type] = true;
+                Item.staff[Type] = true; // Dette gør at spillet ved at det er en stav der affyres. Det bruges til skydeanimationen.
             }
             public override void SetDefaults()
             {
@@ -277,7 +300,7 @@ namespace EksamenProjekt
             }
         }
         /// <summary>
-        /// Sword er nedarvet Weapon og er den sidste i sin række.
+        /// Sword er nedarvet MeleeWeapon og er den sidste i sin række.
         /// </summary>
         public class Sword : MeleeWeapon
         {
@@ -374,9 +397,9 @@ namespace EksamenProjekt
         public class ArmorPiece : CustomItem
         {
             /// <summary>
-            /// 
+            /// Den sekundære constructor for ArmorPiece. Heri indsættes defence argumentet.
             /// </summary>
-            /// <param name="defence"></param>
+            /// <param name="defence">Hvor godt blokeres skade.</param>
             /// <inheritdoc cref="CustomItem(int, int, int, int)"/>
             public ArmorPiece(int defence, int width, int height, int value, int rarity) : base(width, height, value, rarity)
             {
@@ -389,13 +412,26 @@ namespace EksamenProjekt
                 Item.defense = Defence;
             }
         }
-        
+        /// <summary>
+        /// Helmet er nedarvet ArmorPiece og er den mest komlicerede af de 3 stykker rustning.
+        /// </summary>
         public class Helmet: ArmorPiece
         {
+            /// <summary>
+            /// Deb sekundære constructor for Helmet. Der tilføjes ingen nye argumenter her.
+            /// </summary>
+            /// <inheritdoc cref="ArmorPiece(int, int, int, int, int)"/>
             public Helmet(int defence, int width, int height, int value, int rarity) : base(defence, width, height, value, rarity) { }
+            // Dem der lavede terraria har valgt at et armorset skal konstrueres i hjelmen derfor erklæres nødvendige værdier her.
             public bool ArmorSetActive = false;
             public int PairedBreastplate;
             public int PairedLeggings;
+
+            /// <summary>
+            /// En brugerdefineret funktion til at skave et armorset.
+            /// </summary>
+            /// <param name="pairedBreastplate">Brug ModContent.ItemType&lt;BreastplateToPair&gt;()</param>
+            /// <param name="pairedLeggings">Brug ModContent.ItemType&lt;LeggingsToPair&gt;()</param>
             public void MakeIntoArmorset(int pairedBreastplate, int pairedLeggings)
             {
                 ArmorSetActive = true;
@@ -409,12 +445,20 @@ namespace EksamenProjekt
             }
 
         }
+        /// <summary>
+        /// Der er ikke brug for yderligere argumenter til Breastplate, men den laves for continuitets skyld.
+        /// </summary>
         public class Breastplate: ArmorPiece
         {
+            /// <inheritdoc cref="ArmorPiece(int, int, int, int, int)"/>
             public Breastplate(int defence, int width, int height, int value, int rarity) : base(defence, width, height, value, rarity) { }
         }
+        /// <summary>
+        /// Der er ikke brug for yderligere argumenter til Leggings, men den laves for continuitets skyld.
+        /// </summary>
         public class Leggings : ArmorPiece
         {
+            /// <inheritdoc cref="ArmorPiece(int, int, int, int, int)"/>
             public Leggings(int defence, int width, int height, int value, int rarity) : base(defence, width, height, value, rarity) { }
         }
     }

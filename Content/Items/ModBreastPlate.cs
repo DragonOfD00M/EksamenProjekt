@@ -10,7 +10,7 @@ using static EksamenProjekt.Toolbox;
 
 namespace EksamenProjekt.Content.Items
 {
-    [AutoloadEquip(EquipType.Body)]
+    [AutoloadEquip(EquipType.Body)] // Det her er for at spillet ved at det er rustning man kan tage på
     internal class ModBreastplate : Breastplate
     {
         internal ModBreastplate() : base(999, 40, 40, Item.buyPrice(silver: 1), ItemRarityID.Yellow) 
