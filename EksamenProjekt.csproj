@@ -10,8 +10,16 @@
 
 	<!-- References -->
 	<ItemGroup>
-	  <None Remove="Content\Items\AmatoryBow.png" />
-	  <None Remove="Content\Items\AmatoryPickaxe.png" />
+	  <None Remove="Content\Items\ModAxe.png" />
+	  <None Remove="Content\Items\ModBow.png" />
+	  <None Remove="Content\Items\ModBreastplate.png" />
+	  <None Remove="Content\Items\ModBreastplate_body.png" />
+	  <None Remove="Content\Items\ModHelmet.png" />
+	  <None Remove="Content\Items\ModHelmet_Head.png" />
+	  <None Remove="Content\Items\ModLeggings_Legs.png" />
+	  <None Remove="Content\Items\ModPickaxe.png" />
+	  <None Remove="Content\Items\ModStaff.png" />
+	  <None Remove="Content\Items\ModSword.png" />
 	</ItemGroup>
 
 </Project>
