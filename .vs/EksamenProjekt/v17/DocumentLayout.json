@@ -40,11 +40,15 @@
               "RelativeDocumentMoniker": "Toolbox.cs",
               "ToolTip": "C:\\Users\\mart3\\OneDrive\\Documents\\my games\\Terraria\\tModLoader\\ModSources\\EksamenProjekt\\Toolbox.cs",
               "RelativeToolTip": "Toolbox.cs",
-              "ViewState": "AQIAAKQBAAAAAAAAAAAkwNoAAAAtAAAA",
+              "ViewState": "AQIAADkAAAAAAAAAAAAkwFYAAABKAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-05-17T19:08:25.895Z",
               "IsPinned": true,
               "EditorCaption": ""
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
             },
             {
               "$type": "Document",
@@ -56,8 +60,7 @@
               "RelativeToolTip": "Content\\Items\\ModStaff.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAABVAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-18T18:24:19.588Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-05-18T18:24:19.588Z"
             },
             {
               "$type": "Document",
@@ -69,8 +72,7 @@
               "RelativeToolTip": "Content\\Items\\ModBreastPlate.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAABIAAAAJAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-17T18:02:03.419Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-05-17T18:02:03.419Z"
             },
             {
               "$type": "Document",
@@ -82,8 +84,7 @@
               "RelativeToolTip": "Content\\Items\\ModLeggings.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAAhAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-17T10:49:47.672Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-05-17T10:49:47.672Z"
             },
             {
               "$type": "Document",
@@ -95,8 +96,7 @@
               "RelativeToolTip": "Content\\Items\\ModHelmet.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAAqAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-17T10:47:55.193Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-05-17T10:47:55.193Z"
             }
           ]
         }

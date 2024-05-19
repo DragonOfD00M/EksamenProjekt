@@ -79,7 +79,7 @@ namespace EksamenProjekt
             /// <summary>
             /// AddIngredients er en funktion som bruger en speciel løkke til at tilføje alle elementer i ingredients til opskriften.
             /// </summary
-            public static void AddIngredients(Recipe recipe, params (short, int)[] ingredients)
+            public static void AddIngredients(Recipe recipe, (short, int)[] ingredients)
             {
                 // Et foreach løkke går igennem alle elementer i en liste og giver dem et specifikt navn.
                 // I dette tilfælde er navnet ingredient i listen ingredients.
@@ -441,7 +441,11 @@ namespace EksamenProjekt
             }
             public override bool IsArmorSet(Item head, Item body, Item legs)
             {
-                return body.type == PairedBreastplate && legs.type == PairedLeggings;
+                if (ArmorSetActive)
+                {
+                    return body.type == PairedBreastplate && legs.type == PairedLeggings;
+                }
+                return false;
             }
 
         }
